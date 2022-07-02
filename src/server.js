@@ -1,8 +1,8 @@
-const {
-    express, app,
-    cors, config
-} = require('./imports')
-const { listDirContent } = require('./utils');
+import {
+    express, app, router,
+    cors, multer, config
+} from './imports.js'
+import { listDirContent } from './utils.js';
 
 // Global variables
 const { filesDir, ip, port } = config;

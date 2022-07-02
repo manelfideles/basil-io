@@ -1,14 +1,11 @@
-const express = require('express');
+import express from 'express';
 const app = express();
 const router = express.Router();
-const cors = require('cors');
-const multer = require('multer');
-const config = require('./config.js');
-const getSize = require('get-folder-size');
-const fs = require('fs/promises');
+import cors from 'cors'
+import multer from 'multer';
+import { config } from './config.js';
 
-module.exports = {
+export {
     express, app, router,
     cors, multer, config,
-    getSize, fs
 }
