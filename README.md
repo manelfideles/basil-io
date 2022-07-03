@@ -65,12 +65,7 @@ Ever since watching a Raspberry Pi video for the first time, I've always wanted 
 ## Contact
 
 Author: Manuel Fideles <br />
-Linkedin: [manuel-fideles](https://www.linkedin.com/in/manuel-fideles/)
+Linkedin: [manuel-fideles](https://www.linkedin.com/in/manuel-fideles/) <br />
 Project Link: [basil-io](https://github.com/manelfideles/basil-io)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
-
-<!-- MARKDOWN LINKS & IMAGES -->
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/manuel-fideles
