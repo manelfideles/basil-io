@@ -46,7 +46,7 @@ Ever since watching a Raspberry Pi video for the first time, I've always wanted 
 
 ### Built With
 
-* [React.js](https://reactjs.org/)
+* [Next.js](https://nextjs.org/)
 * [Express.js](https://expressjs.com/)
 * [Docker](https://www.docker.com/)
 * [Tailwind](https://tailwindcss.com/)
