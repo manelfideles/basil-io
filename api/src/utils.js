@@ -3,8 +3,7 @@ import getItemSize from "get-folder-size";
 import { lookup } from 'mime-types';
 import { join } from 'path';
 import checkDiskSpace from 'check-disk-space';
-import { walk } from '@root/walk';
-
+import FileHound from 'filehound';
 
 // get folder's last modified time
 const recursiveLastModified = (dir) => {
@@ -59,17 +58,16 @@ const listDirContent = async (path) => {
     }))
 }
 
-const walkFunc = async (err, dir) => {
-    if (err) throw err;
-    if (dir.isDirectory() && dir.name.startsWith("."))
-        return false;
-    const mimeType = lookup(dir.name);
-    if (mimeType) console.log(mimeType.split('/')[0]);
-    else console.log('folder');
-};
-
 const getContentDistribution = async (startDir) => {
-    await walk(startDir, walkFunc);
+    let files = await FileHound.create()
+        .paths(startDir)
+        .find()
+    files = files.map(fp => lookup(fp).split('/')[0])
+    let counts = {}
+    for (const fp of files) {
+        counts[fp] = counts[fp] ? counts[fp] + 1 : 1;
+    }
+    return { 'total': files.length, 'counts': counts }
 }
 
 const getDiskStatus = async (dir) => {
