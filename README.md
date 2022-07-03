@@ -42,7 +42,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-Ever since watching a Raspberry Pi video for the first time, I've always wanted to try and build something with one. When <a href='https://www.youtube.com/watch?v=QdHvS0D1zAI'>this video by Jeff Delaney's Fireship</a> came out, I knew a home-server build was in my future. Given that I also wanted to learn Docker and Tailwind for a long time now, I figured "Why not just combine all those into one project?". And so, basil.io was born.
+Ever since watching a Raspberry Pi video for the first time, I've always wanted to try and build something with one. When <a href='https://www.youtube.com/watch?v=QdHvS0D1zAI'>this video by Jeff Delaney's Fireship</a> came out, I knew a home-server build was in my future. Given that I also wanted to learn Docker and Tailwind for a long time now, I figured "Why not just combine all those into one project?". And so, **basil.io** was born.
 
 ### Built With
 
@@ -65,9 +65,7 @@ Ever since watching a Raspberry Pi video for the first time, I've always wanted 
 ## Contact
 
 Author: Manuel Fideles <br />
-Email: manuelfideles77@gmail.com <br />
 Linkedin: [manuel-fideles](https://www.linkedin.com/in/manuel-fideles/)
-
 Project Link: [basil-io](https://github.com/manelfideles/basil-io)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
