@@ -7,10 +7,12 @@ import * as path from 'path';
 import {
     listDirContent,
     getDiskStatus,
-    getContentDistribution
+    getContentDistribution,
+    getActivity
 } from './utils.js';
 
 const homeDir = process.env.FILES_DIR;
+const activityDir = process.env.ACTIVITY_DIR;
 
 const app = express();
 app.use(express.urlencoded({ extended: true }));
@@ -30,12 +32,18 @@ app.get('/login', cors(), (req, res) => {
 })
 
 app.get('/', cors(), async (req, res) => {
-    const activity = [];
+    const activity = await getActivity(activityDir);
     const contentDistribution = await getContentDistribution(homeDir);
     const freeSpace = await getDiskStatus(path.resolve(homeDir));
     const content = await listDirContent(homeDir);
     res.send({
-        stats: [activity, [freeSpace, contentDistribution]],
+        stats: {
+            'activity': activity,
+            'status': {
+                'space': freeSpace,
+                'contentDistribution': contentDistribution
+            }
+        },
         content: content
     });
 })

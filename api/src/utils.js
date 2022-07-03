@@ -4,6 +4,7 @@ import { lookup } from 'mime-types';
 import { join } from 'path';
 import checkDiskSpace from 'check-disk-space';
 import FileHound from 'filehound';
+import * as dfd from 'danfojs-node';
 
 // get folder's last modified time
 const recursiveLastModified = (dir) => {
@@ -68,6 +69,28 @@ const getContentDistribution = async (startDir) => {
         counts[fp] = counts[fp] ? counts[fp] + 1 : 1;
     }
     return { 'total': files.length, 'counts': counts }
+};
+
+const zip = (keys, values) => keys.reduce((acc, k, i) => (acc[k] = values[i], acc), {})
+
+const getActivity = async (activityDir) => {
+    const data = await dfd.readCSV(activityDir);
+    let activity = {
+        'Sun': null,
+        'Mon': null,
+        'Tue': null,
+        'Wed': null,
+        'Thu': null,
+        'Fri': null,
+        'Sat': null,
+    }
+    Object.keys(activity).map((day, i) => {
+        let info = data
+            .loc({ rows: data['date'].eq(day) })['mime']
+            .valueCounts()
+        activity[day] = zip(info['$index'], info['$data'])
+    });
+    return activity;
 }
 
 const getDiskStatus = async (dir) => {
@@ -81,5 +104,6 @@ export {
     listDirContent,
     recursiveLastModified,
     getDiskStatus,
-    getContentDistribution
+    getContentDistribution,
+    getActivity
 }

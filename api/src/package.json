@@ -13,6 +13,7 @@
   "dependencies": {
     "check-disk-space": "^3.3.0",
     "cors": "^2.8.5",
+    "danfojs-node": "^1.1.1",
     "dotenv": "^16.0.1",
     "express": "^4.17.3",
     "filehound": "^1.17.6",
